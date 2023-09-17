@@ -1,6 +1,24 @@
 package seminars.first.Calculator;
 
 public class Calculator {
+
+    // Домашнее задание к семинару №1
+    // Нужно написать в калькуляторе метод вычисления суммы покупки со скидкой и проверить его, используя AssertJ
+    // Примерная сигнатура и тело метода:
+    public static double calculatingDiscount(double purchaseAmount, int discountAmount) {
+        // purchaseAmount - сумма покупки
+        // discountAmount - размер скидки
+        double result;
+        if (purchaseAmount >= 0 && discountAmount >= 0) {
+            result = purchaseAmount - (purchaseAmount * discountAmount / 100);
+            return result; // Метод должен возвращать сумму покупки со скидкой
+        } else {
+            throw new ArithmeticException("Отрицательные аргументы не разрешены.");
+        }
+    }
+
+
+
     public static int calculation(int firstOperand, int secondOperand, char operator) {
         int result;
 
@@ -40,17 +58,4 @@ public class Calculator {
             return Math.sqrt(num);
     }
 
-    // Нужно написать в калькуляторе метод вычисления суммы покупки со скидкой и проверить его, используя AssertJ
-    // Примерная сигнатура и тело метода:
-    public static double calculatingDiscount(double purchaseAmount, int discountAmount) {
-        // purchaseAmount - сумма покупки
-        // discountAmount - размер скидки
-        double result;
-        if (purchaseAmount >= 0 && discountAmount >= 0) {
-            result = purchaseAmount - (purchaseAmount * discountAmount / 100);
-            return result; // Метод должен возвращать сумму покупки со скидкой
-        } else {
-            throw new ArithmeticException("Отрицательные аргументы не разрешены.");
-        }
-    }
 }
